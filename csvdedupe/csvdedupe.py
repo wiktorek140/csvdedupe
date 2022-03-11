@@ -133,6 +133,7 @@ class CSVDedupe(csvhelpers.CSVCommand) :
         clustered_dupes = deduper.match(unique_d, threshold)
 
         expanded_clustered_dupes = []
+        rows_used = []
         for cluster, scores in clustered_dupes:
             new_cluster = list(cluster)
             new_scores = list(scores)
