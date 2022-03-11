@@ -17,3 +17,4 @@ logfile
 output.csv
 *_cleaned.csv
 dist
+.idea

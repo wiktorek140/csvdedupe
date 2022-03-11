@@ -65,13 +65,14 @@ def writeResults(clustered_dupes, input_file, output_file):
     # Write our original data back out to a CSV with a new column called 
     # 'Cluster ID' which indicates which records refer to each other.
 
-    global cluster_id
+    cluster_id = 0
     logging.info('saving results to: %s' % output_file)
 
     cluster_membership = {}
     for cluster_id, (cluster, score) in enumerate(clustered_dupes):
         for record_id in cluster:
             cluster_membership[record_id] = cluster_id
+
 
     unique_record_id = cluster_id + 1
 
