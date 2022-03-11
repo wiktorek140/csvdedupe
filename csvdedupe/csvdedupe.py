@@ -133,7 +133,6 @@ class CSVDedupe(csvhelpers.CSVCommand) :
         clustered_dupes = deduper.match(unique_d, threshold)
 
         expanded_clustered_dupes = []
-        rows_used = []
         for cluster, scores in clustered_dupes:
             new_cluster = list(cluster)
             new_scores = list(scores)
@@ -145,14 +144,15 @@ class CSVDedupe(csvhelpers.CSVCommand) :
 
         # Add any parents with no clustered exact_dups but with exact dupes to expanded_clustered_dupes
         # or else they are omitted counted as non duplicates.
-        # for row, exact_dups in parents.items():
-        #     if row not in rows_used and exact_dups is not None and len(exact_dups) > 0:
-        #         new_cluster = [row]
-        #         new_cluster.extend(exact_dups)
-        #         new_scores = [1.0]
-        #         new_scores.extend([1.0] * len(exact_dups))
-        #         expanded_clustered_dupes.append((new_cluster, new_scores))
-        #
+        rows_used = []
+        for row, exact_dups in parents.items():
+            if row not in rows_used and exact_dups is not None and len(exact_dups) > 0:
+                new_cluster = [row]
+                new_cluster.extend(exact_dups)
+                new_scores = [1.0]
+                new_scores.extend([1.0] * len(exact_dups))
+                expanded_clustered_dupes.append((new_cluster, new_scores))
+
         clustered_dupes = expanded_clustered_dupes
 
         logging.info('# duplicate sets %s' % len(clustered_dupes))

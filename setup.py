@@ -15,7 +15,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name = "csvdedupe2",
-    version = '0.2.4',
+    version = '0.2.6',
     description="Command line tools for deduplicating and merging csv files",
     author="Forest Gregg, Derek Eder, Wiktor Strzebała",
     license="MIT",
