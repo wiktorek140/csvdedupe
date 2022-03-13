@@ -13,7 +13,7 @@ Two easy commands:
 [Read more about csvdedupe on OpenNews Source](http://source.opennews.org/en-US/articles/introducing-cvsdedupe/)
 
 
-[![Build Status](https://travis-ci.org/wiktorek140/csvdedupe.png?branch=master)](https://travis-ci.org/dedupeio/csvdedupe)
+[![Build Status](https://travis-ci.com/wiktorek140/csvdedupe.png?branch=master)](https://travis-ci.com/wiktorek140/csvdedupe)
 
 ## Installation and dependencies
 
