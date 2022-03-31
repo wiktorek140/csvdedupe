@@ -65,7 +65,7 @@ def writeResults(clustered_dupes, input_file, output_file):
     # Write our original data back out to a CSV with a new column called 
     # 'Cluster ID' which indicates which records refer to each other.
 
-    max_cluster = None
+    max_cluster = -1
     logging.info('saving results to: %s' % output_file)
 
     cluster_membership = {}
